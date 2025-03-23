@@ -405,7 +405,8 @@ private fun RecentSearchesBody(
                         append(stringResource(id = searchR.string.feature_search_recent_searches))
                     }
                 },
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                modifier = Modifier.testTag("NiaSearchTopBarClearIcon").
+                padding(horizontal = 16.dp, vertical = 8.dp),
             )
             if (recentSearchQueries.isNotEmpty()) {
                 IconButton(
@@ -451,7 +452,9 @@ private fun SearchToolbar(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier.fillMaxWidth(),
     ) {
-        IconButton(onClick = { onBackClick() }) {
+        IconButton(onClick = { onBackClick() },
+            modifier = Modifier.testTag("NiaSearchTopBarBackIcon")
+            ) {
             Icon(
                 imageVector = NiaIcons.ArrowBack,
                 contentDescription = stringResource(
@@ -482,10 +485,12 @@ private fun SearchTextField(
     }
 
     TextField(
+
         colors = TextFieldDefaults.colors(
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
+
         ),
         leadingIcon = {
             Icon(
@@ -494,7 +499,7 @@ private fun SearchTextField(
                     id = searchR.string.feature_search_title,
                 ),
                 tint = MaterialTheme.colorScheme.onSurface,
-            )
+                            )
         },
         trailingIcon = {
             if (searchQuery.isNotEmpty()) {
@@ -516,7 +521,7 @@ private fun SearchTextField(
         onValueChange = {
             if ("\n" !in it) onSearchQueryChanged(it)
         },
-        modifier = Modifier
+        modifier = Modifier.testTag("NiaSearchTopBarTextField")
             .fillMaxWidth()
             .padding(16.dp)
             .focusRequester(focusRequester)

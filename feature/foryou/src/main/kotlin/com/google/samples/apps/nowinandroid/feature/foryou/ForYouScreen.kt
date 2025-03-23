@@ -272,18 +272,19 @@ private fun LazyStaggeredGridScope.onboarding(
                     Text(
                         text = stringResource(R.string.feature_foryou_onboarding_guidance_title),
                         textAlign = TextAlign.Center,
-                        modifier = Modifier
+                        modifier = Modifier.testTag("NiaContentHeaderTitle")
                             .fillMaxWidth()
                             .padding(top = 24.dp),
                         style = MaterialTheme.typography.titleMedium,
-                    )
+                                            )
                     Text(
                         text = stringResource(R.string.feature_foryou_onboarding_guidance_subtitle),
-                        modifier = Modifier
+                        modifier = Modifier.testTag("NiaContentHeaderSubtitle")
                             .fillMaxWidth()
                             .padding(top = 8.dp, start = 24.dp, end = 24.dp),
                         textAlign = TextAlign.Center,
                         style = MaterialTheme.typography.bodyMedium,
+
                     )
                     TopicSelection(
                         onboardingUiState,
@@ -298,10 +299,11 @@ private fun LazyStaggeredGridScope.onboarding(
                         NiaButton(
                             onClick = saveFollowedTopics,
                             enabled = onboardingUiState.isDismissable,
-                            modifier = Modifier
+                            modifier = Modifier.testTag("NiaContentActionButton")
                                 .padding(horizontal = 24.dp)
                                 .widthIn(364.dp)
                                 .fillMaxWidth(),
+
                         ) {
                             Text(
                                 text = stringResource(R.string.feature_foryou_done),
