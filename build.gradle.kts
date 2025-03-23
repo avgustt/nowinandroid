@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+
+
 buildscript {
     repositories {
         google {
@@ -35,6 +37,9 @@ buildscript {
     }
 
 }
+
+
+
 
 /*
  * By listing all the plugins used throughout all subprojects in the root project build script, it
@@ -62,3 +67,5 @@ plugins {
     alias(libs.plugins.room) apply false
     alias(libs.plugins.module.graph) apply true // Plugin applied to allow module graph generation
 }
+
+
