@@ -37,5 +37,4 @@ class MainScreen(semanticsProvider: SemanticsNodeInteractionsProvider) :
         }
 
 
-
 }

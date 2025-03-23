@@ -18,4 +18,5 @@ class SearchScreen(semanticsProvider: SemanticsNodeInteractionsProvider) :
     val searchClearIcon = child<KNode> {
         hasTestTag("NiaSearchTopBarClearIcon")
     }
+
 }
