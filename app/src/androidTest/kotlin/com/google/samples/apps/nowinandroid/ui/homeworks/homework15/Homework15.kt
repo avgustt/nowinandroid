@@ -17,4 +17,5 @@
 package com.google.samples.apps.nowinandroid.ui.homeworks.homework15
 
 class Homework15 {
+
 }
